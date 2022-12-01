@@ -1,4 +1,10 @@
 function getMinMax(str) {
-  return {min:+str.split(' ').filter(item =>+item).reduce((prev,next)=>next-prev<0?next:prev), 
-    max:+str.split(' ').filter(item =>+item).reduce((prev,next)=>next-prev>0?next:prev )};
+  return str
+  .split(" ")
+  .filter((item) => !isNaN(item))
+  .reduce((prev, item, index) => {
+   prev.min = prev.min < +item ? prev.min: +item;
+   prev.max = prev.max > +item ? prev.max: +item;
+   return prev;
+},{});
 }
