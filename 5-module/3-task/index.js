@@ -15,6 +15,7 @@ function initCarousel() {
     if (Number(elem.dataset.counter) > 0 && arrowLeftButton.style.display == 'none' ) arrowLeftButton.style.display = '';
   }
   arrowLeftButton.onclick = function(){
+    
     let slideWidth = document.querySelector('.carousel__slide').offsetWidth * ((1-elem.dataset.counter));
     elem.style.transform = 'translateX('+ slideWidth + 'px)';
     elem.dataset.counter = Number(elem.dataset.counter) - 1;
