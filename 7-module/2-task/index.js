@@ -25,7 +25,7 @@ export default class Modal {
                `
     }
     #onButtonClick = (event) => {
-      if(!event.target.closest('button')) return;
+      if(!event.target.closest('.modal__close')) return;
       this.close();
     }
 
@@ -40,12 +40,12 @@ export default class Modal {
     setTitle(modalTitle){
         this.#elem.querySelector('.modal__title').innerHTML = modalTitle;
     }
-    get #modalBody(){
+    get modalBody(){
       return this.#elem.querySelector('.modal__body');
     }
     setBody(node){
-      this.#modalBody.innerHTML = '';
-      this.#modalBody.append(node);
+      this.modalBody.innerHTML = '';
+      this.modalBody.append(node);
     }
 
     close(){
