@@ -41,6 +41,10 @@ export default class StepSlider {
 
   }
 
+  get value(){
+    return this.#value;
+  }
+
   #onPointerDown = (event) =>{
 
     document.addEventListener('pointermove',this.#onPointerMove);
